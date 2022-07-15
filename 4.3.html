@@ -1,0 +1,25 @@
+<script>
+    /**
+ * Generates random number
+ */
+    function rand10() {
+        let a = Math.random() * 10 + 1;
+        return parseInt(a)
+    }
+
+    /**
+    * Generates a array of random number
+    * @params {int}
+    */
+    function multiRand(a) {
+        let arr = []
+        for (let i = 0; i < a; i++) {
+            arr.push(rand10())
+        }
+        return arr
+    }
+
+    let number = prompt("Entrer un nombre")
+    alert(multiRand(number))
+
+</script>
