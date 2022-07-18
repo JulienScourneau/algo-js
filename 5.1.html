@@ -9,6 +9,18 @@
 
     }
     function  askTvSerie(){
-        
+        let serie = new Object()
+        serie.name = prompt("Nom série")
+        serie.productionYear = prompt("Année série")
+        let loop = prompt("Nombre d'acteur")
+        let castingArr = []
+        for(let i = 1; i <= loop; i++){
+            let actorName = prompt("Nom de l'acteur")
+            let actorRole = prompt("Role de l'acteur")
+            castingArr.push([actorName,actorRole])
+        }
+        serie.castingMember = castingArr
+        return serie
     }
+    console.log(askTvSerie())
 </script>
