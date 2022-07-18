@@ -1,26 +1,28 @@
 <script>
     let tvSerie = {
-        name :"",
-        productionYear : 0,
-        castingMember :[{
+        name: "",
+        productionYear: 0,
+        castingMember: [{
             name: "",
             role: ""
         }]
 
     }
-    function  askTvSerie(){
-        let serie = new Object()
+    function askTvSerie() {
+        let serie = tvSerie
         serie.name = prompt("Nom série")
         serie.productionYear = prompt("Année série")
         let loop = prompt("Nombre d'acteur")
         let castingArr = []
-        for(let i = 1; i <= loop; i++){
+        for (let i = 1; i <= loop; i++) {
             let actorName = prompt("Nom de l'acteur")
             let actorRole = prompt("Role de l'acteur")
-            castingArr.push([actorName,actorRole])
+            castingArr.push([actorName, actorRole])
         }
         serie.castingMember = castingArr
         return serie
     }
-    console.log(askTvSerie())
+    let json = JSON.stringify(askTvSerie())
+    console.log(json)
+    alert(json)
 </script>
