@@ -1,0 +1,46 @@
+<script>
+    let tvSerie = {
+        name: "",
+        productionYear: 0,
+        castingMember: [{
+            name: ""
+        }]
+
+    }
+
+    function randomizeCast(newSerie) {
+        console.log("before while " + newSerie.castingMember);
+        let array = newSerie.castingMember
+        let casting = array.length, random
+        console.log(casting);
+        while (casting != 0) {
+            random = Math.floor(Math.random() * casting)
+            casting--
+            [newSerie.castingMember[casting], newSerie.castingMember[random]] =
+                [newSerie.castingMember[random], newSerie.castingMember[casting]]
+        }
+        console.log("after while" + newSerie.castingMember);
+        return newSerie
+
+    }
+
+    function askTvSerie() {
+        let serie = tvSerie
+        serie.name = prompt("Nom série")
+        serie.productionYear = prompt("Année série")
+        let loop = prompt("Nombre d'acteur")
+        let castingArr = []
+        for (let i = 1; i <= loop; i++) {
+            let actorName = prompt("Nom de l'acteur")
+            castingArr.push(actorName)
+        }
+        serie.castingMember = castingArr
+        return serie
+    }
+
+    let serie = askTvSerie()
+    console.log("Serie: " + serie.castingMember)
+    let randomize = randomizeCast(serie)
+    console.log("Serie randome" + randomize.castingMember);
+
+</script>
